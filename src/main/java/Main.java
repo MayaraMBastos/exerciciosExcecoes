@@ -6,23 +6,24 @@ public class Main {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         try {
-//            //------------------
-//            int num1 = sc.nextInt();
-//            sc.nextLine();
-//            int num2 = sc.nextInt();
-//            sc.nextLine();
-//            divisaoCalculo(num1, num2);
-//
-//            //----------------
-//            int[] vInt = new int[3];
-//            for (int i = 0; i < vInt.length; i++) {
-//                vInt[i] = sc.nextInt();
-//            }
-//            indiceDeVetorNullo(vInt);
+            //------------------
+            int num1 = sc.nextInt();
+            sc.nextLine();
+            int num2 = sc.nextInt();
+            sc.nextLine();
+            divisaoCalculo(num1, num2);
+
+            //----------------
+            int[] vInt = new int[3];
+            for (int i = 0; i < vInt.length; i++) {
+                vInt[i] = sc.nextInt();
+            }
+            indiceDeVetorNullo(vInt);
 
             //----------------
             String sNumero = sc.next();
             castErrado(sNumero);
+
         } catch (InputMismatchException e) {
             System.out.println("Erro de tipo de entrada " + e.getMessage());
         }
