@@ -10,9 +10,15 @@ public class Main {
             sc.nextLine();
             int num2 = sc.nextInt();
             sc.nextLine();
-            erroCalculo(num1, num2);
-        }catch (InputMismatchException e){
-            System.out.println("Erro de tipo de entrada " +e.getMessage());
+            divisaoCalculo(num1, num2);
+
+            int[] vInt = new int[3];
+            for (int i = 0; i < vInt.length; i++) {
+                vInt[i] = sc.nextInt();
+            }
+            inndiceDeVetorNullo(vInt);
+        } catch (InputMismatchException e) {
+            System.out.println("Erro de tipo de entrada " + e.getMessage());
         }
 
     }
@@ -21,8 +27,23 @@ public class Main {
         try {
             int divisaoInteira = num1 / num2;
             System.out.println(divisaoInteira);
-        }catch (ArithmeticException e) {
+        } catch (ArithmeticException e) {
             System.out.println("Erro de calculo Aritimetico: " + e.getMessage());
+        } catch (NumberFormatException e) {
+            System.out.println(e.getMessage());
+        }
+
+    }
+
+    public static void inndiceDeVetorNullo(int[] vetor) {
+        // tamanho do vetor mais 1 para teste de erro de acesso a indice
+        int indice = vetor.length + 1;
+        try {
+            for (int i = 0; i < indice; i++) {
+                System.out.println(vetor[i]);
+            }
+        }catch (ArrayIndexOutOfBoundsException e){
+            System.out.println("Erro no acesso a indice de vetor inexistente " + e.getMessage());
         }
 
     }
